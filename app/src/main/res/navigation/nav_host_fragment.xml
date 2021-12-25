@@ -3,15 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_host_fragment"
-    app:startDestination="@id/homePage">
-    <activity
-        android:id="@+id/homePage"
-        android:name="com.example.coeus.HomePage"
-        android:label="activity_home_page"
-        tools:layout="@layout/activity_home_page" />
+    app:startDestination="@id/homePageFragment">
     <fragment
         android:id="@+id/course"
         android:name="com.example.coeus.Course"
         android:label="fragment_course"
-        tools:layout="@layout/fragment_course" />
+        tools:layout="@layout/fragment_course" >
+        <action
+            android:id="@+id/action_course_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.coeus.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePageFragment_to_course"
+            app:destination="@id/course" />
+    </fragment>
 </navigation>
