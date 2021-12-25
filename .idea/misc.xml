@@ -4,7 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/gradient.xml" value="0.32222222222222224" />
+        <entry key="app/src/main/res/drawable/ic_baseline_calendar_today_24.xml" value="0.1015625" />
+        <entry key="app/src/main/res/drawable/round_button.xml" value="0.10520833333333333" />
+        <entry key="app/src/main/res/drawable/round_outline.xml" value="0.20615384615384616" />
+        <entry key="app/src/main/res/font/source_sans_pro_bold.xml" value="0.20925925925925926" />
+        <entry key="app/src/main/res/layout/activity_home_page.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_host_page.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2361693214851189" />
+        <entry key="app/src/main/res/layout/course_card.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_course.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/home_page_card.xml" value="0.25" />
       </map>
     </option>
   </component>
