@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
 
         findViewById<TextView>(R.id.textView2).setOnClickListener {
-            startActivity(Intent(this,HostPage::class.java))
+            startActivity(Intent(this,HomePage::class.java))
         }
     }
 }
