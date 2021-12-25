@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host_fragment"
+    app:startDestination="@id/homePage2">
+    <activity
+        android:id="@+id/homePage2"
+        android:name="com.example.coeus.HomePage"
+        android:label="activity_home_page"
+        tools:layout="@layout/activity_home_page" />
+    <fragment
+        android:id="@+id/course2"
+        android:name="com.example.coeus.Course"
+        android:label="fragment_course"
+        tools:layout="@layout/fragment_course" />
+</navigation>
