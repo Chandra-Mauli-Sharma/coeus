@@ -1,13 +1,17 @@
 package com.example.coeus.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Adapter
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.coeus.Course
 import com.example.coeus.R
 import com.example.coeus.data.HomeCardData
 
@@ -26,6 +30,9 @@ class HomeCardAdapter(val dataset:List<HomeCardData>):RecyclerView.Adapter<HomeC
         val item = dataset[position]
         Glide.with(holder.itemView.context).load(item.image).into(holder.imageView)
         holder.textView.text=item.text
+        holder.itemView.setOnClickListener{
+
+        }
     }
 
     override fun getItemCount(): Int = dataset.size

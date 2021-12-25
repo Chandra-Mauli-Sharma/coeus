@@ -10,6 +10,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val mFragmentActivity=supportFragmentManager
+        val mFragmentTransaction=mFragmentActivity.beginTransaction()
+        val mFragment=Course()
+
+
         findViewById<TextView>(R.id.textView2).setOnClickListener {
             startActivity(Intent(this,HostPage::class.java))
         }
