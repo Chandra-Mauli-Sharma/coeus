@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.coeus.adapter.CourseAdapter
-import com.example.coeus.data.CourseData
 import com.example.coeus.model.CourseModel
 
 class Course : Fragment() {
@@ -22,6 +24,14 @@ class Course : Fragment() {
 
         val courses= context?.let { CourseModel().load(it) }
 
+        view.findViewById<ImageView>(R.id.imageView3).setOnClickListener{
+            Navigation.findNavController(view).navigate(R.id.action_course_to_homePageFragment)
+        }
+
+
+        view.findViewById<TextView>(R.id.textView8).setOnClickListener{
+            Navigation.findNavController(view).navigate(R.id.action_course_to_homePageFragment)
+        }
         recyclerView.adapter= courses?.let { CourseAdapter(it) }
         recyclerView.setHasFixedSize(true)
         return view

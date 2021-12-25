@@ -1,25 +1,32 @@
 package com.example.coeus
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.coeus.adapter.HomeCardAdapter
 import com.example.coeus.model.HomeCardModel
 import java.util.*
 
-class HomePage : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home_page)
+class HomePageFragment : Fragment() {
 
-        setHomeGreeting()
-        val profliePicBackground = findViewById<ImageView>(R.id.imageView)
-        val profilePic = findViewById<ImageView>(R.id.imageView4)
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+    lateinit var mView: View
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_home_page, container, false)
+
+        mView = view
+        view.findViewById<TextView>(R.id.textView4).text = setHomeGreeting()
+        val profliePicBackground = view.findViewById<ImageView>(R.id.imageView)
+        val profilePic = view.findViewById<ImageView>(R.id.imageView4)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         val cardImg = HomeCardModel().load()
         Glide.with(this)
             .load(R.drawable.ani).circleCrop().into(profilePic)
@@ -30,13 +37,15 @@ class HomePage : AppCompatActivity() {
 
         recyclerView.adapter = HomeCardAdapter(cardImg)
         recyclerView.setHasFixedSize(true)
+
+        return view
     }
 
-    fun setHomeGreeting() {
+    fun setHomeGreeting(): String {
         val c = Calendar.getInstance()
         val timeOfDay = c.get(Calendar.HOUR_OF_DAY)
 
-        findViewById<TextView>(R.id.textView4).text = when (timeOfDay) {
+        return when (timeOfDay) {
             in 0..11 -> "Good Morning!"
             in 12..15 -> "Good Afternoon!"
             else -> "Good Evening!"
