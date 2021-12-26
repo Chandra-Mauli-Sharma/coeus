@@ -31,7 +31,15 @@ class HomeCardAdapter(val dataset:List<HomeCardData>):RecyclerView.Adapter<HomeC
         Glide.with(holder.itemView.context).load(item.image).into(holder.imageView)
         holder.textView.text=item.text
         holder.itemView.setOnClickListener{
-                Navigation.findNavController(holder.itemView).navigate(item.action)
+            when(position){
+                0 -> Navigation.findNavController(holder.itemView).navigate(R.id.action_homePageFragment_to_course)
+                1 -> Navigation.findNavController(holder.itemView).navigate(R.id.action_homePageFragment_to_course)
+                2 -> Navigation.findNavController(holder.itemView).navigate(R.id.action_homePageFragment_to_course)
+                3 -> Navigation.findNavController(holder.itemView).navigate(R.id.action_homePageFragment_to_course)
+                4 -> Navigation.findNavController(holder.itemView).navigate(R.id.action_homePageFragment_to_supportFragment)
+                5 -> Navigation.findNavController(holder.itemView).navigate(R.id.action_homePageFragment_to_course)
+            }
+
         }
     }
 
