@@ -6,6 +6,8 @@
         <entry key="app/src/main/res/drawable/gradient.xml" value="0.32222222222222224" />
         <entry key="app/src/main/res/drawable/ic_baseline_calendar_today_24.xml" value="0.1015625" />
         <entry key="app/src/main/res/drawable/ic_home_page_bottom_illustration.xml" value="0.10520833333333333" />
+        <entry key="app/src/main/res/drawable/rectangle.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/rectangle1.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/round_button.xml" value="0.10520833333333333" />
         <entry key="app/src/main/res/drawable/round_outline.xml" value="0.20615384615384616" />
         <entry key="app/src/main/res/font/source_sans_pro_bold.xml" value="0.20925925925925926" />
@@ -15,7 +17,10 @@
         <entry key="app/src/main/res/layout/course_card.xml" value="0.21428571428571427" />
         <entry key="app/src/main/res/layout/fragment_course.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_home_page.xml" value="0.10461956521739131" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/fragment_support.xml" value="0.1" />
         <entry key="app/src/main/res/layout/home_page_card.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/search_result.xml" value="0.1" />
       </map>
     </option>
   </component>
