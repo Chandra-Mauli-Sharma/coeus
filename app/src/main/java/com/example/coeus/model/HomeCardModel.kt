@@ -11,7 +11,7 @@ class HomeCardModel {
             HomeCardData(R.drawable.ic_home_page_meet_icon,"1:1 with Educator", R.id.action_homePageFragment_to_course),
             HomeCardData(R.drawable.ic_home_page_calender_icon,"Calender",R.id.action_homePageFragment_to_calendarPage),
             HomeCardData(R.drawable.ic_home_page_support_icon,"Support", R.id.action_homePageFragment_to_course),
-            HomeCardData(R.drawable.ic_home_page_profile_icon,"My Profile", R.id.action_homePageFragment_to_course)
+            HomeCardData(R.drawable.ic_home_page_profile_icon,"My Profile", R.id.action_homePageFragment_to_profileFragment)
             )
     }
 }
