@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 
@@ -15,6 +16,9 @@ class CalendarPage: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_calendar, container, false)
         view.findViewById<ImageView>(R.id.imageView3).setOnClickListener{
+            view.findNavController().navigate(R.id.action_calendarPage_to_homePageFragment)
+        }
+        view.findViewById<TextView>(R.id.textView9).setOnClickListener{
             view.findNavController().navigate(R.id.action_calendarPage_to_homePageFragment)
         }
         return view
