@@ -24,6 +24,12 @@
         <action
             android:id="@+id/action_homePageFragment_to_supportFragment"
             app:destination="@id/supportFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_calendarPage"
+            app:destination="@id/calendarPage" />
+        <action
+            android:id="@+id/action_homePageFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
     </fragment>
     <fragment
         android:id="@+id/supportFragment"
@@ -33,9 +39,6 @@
         <action
             android:id="@+id/action_supportFragment_to_homePageFragment"
             app:destination="@id/homePageFragment" />
-        <action
-            android:id="@+id/action_homePageFragment_to_calendarPage"
-            app:destination="@id/calendarPage" />
     </fragment>
     <fragment
         android:id="@+id/calendarPage"
@@ -44,6 +47,15 @@
         tools:layout="@layout/fragment_calendar" >
         <action
             android:id="@+id/action_calendarPage_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.coeus.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_homePageFragment"
             app:destination="@id/homePageFragment" />
     </fragment>
 </navigation>

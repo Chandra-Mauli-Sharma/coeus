@@ -35,19 +35,16 @@ tools:context=".SearchFragment">
         android:layout_marginTop="70dp"
         android:background="@drawable/round_outline">
 
-        <EditText
-            android:id="@+id/editTextTextPersonName2"
-            android:layout_width="0dp"
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_margin="10dp"
             android:background="@drawable/rectangle1"
-            android:drawableStart="@drawable/ic_search_page_search_icon"
-            android:drawablePadding="12dp"
-            android:ems="10"
-            android:hint="Search for Anything"
-            android:inputType="textPersonName"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
+            android:iconifiedByDefault="false"
+            android:queryHint="Search for Anything"
+            android:searchIcon="@drawable/ic_search_page_search_icon"
+            android:theme="@android:style/Theme.Material.Light.NoActionBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -56,17 +53,20 @@ tools:context=".SearchFragment">
             android:id="@+id/imageView9"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="42dp"
             android:src="@drawable/ic_search_page_illustration"
+            app:layout_constraintBottom_toTopOf="@+id/button3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="314dp" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="72dp"
             android:background="@drawable/round_button"
             android:fontFamily="@font/source_sans_pro_bold"
             android:text="Recommended for you"
@@ -74,32 +74,34 @@ tools:context=".SearchFragment">
             app:icon="@color/purple_500"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button3" />
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/round_button"
             android:fontFamily="@font/source_sans_pro_bold"
-            android:text="Let’s start learning ,Nitin!"
+            android:text="Let’s start learning"
             android:textColor="#FFFFFF"
             app:icon="@color/purple_500"
+            app:layout_constraintBottom_toTopOf="@+id/button2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView3"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_margin="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@+id/imageView9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+            app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

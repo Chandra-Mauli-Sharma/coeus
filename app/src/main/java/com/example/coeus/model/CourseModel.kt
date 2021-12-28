@@ -22,8 +22,9 @@ class CourseModel {
                 val instructorName = courseResponse.getString("instructorName")
                 val rating = courseResponse.getString("rating")
                 val duration = courseResponse.getString("duration")
+                val status=courseResponse.getBoolean("status")
 
-                jsonResponse.add(CourseData(courseName, instructorName, rating, duration))
+                jsonResponse.add(CourseData(courseName, instructorName, rating, duration,status))
 
             }
         } catch(e:JSONException){
