@@ -22,7 +22,7 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
-        view.findViewById<TextView>(R.id.SearchText).setOnClickListener{
+        view.findViewById<TextView>(R.id.ProfileText).setOnClickListener{
             view.findNavController().navigate(R.id.action_profileFragment_to_homePageFragment)
         }
         return view

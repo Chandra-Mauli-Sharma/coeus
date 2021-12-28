@@ -4,25 +4,29 @@
       "courseName":"Intro to C#",
       "instructorName": "Brackeys",
       "rating": "5/5",
-      "duration": "5 hours"
+      "duration": "5 hours",
+      "status": true
     },
     {
-      "courseName": "Intro to C+",
+      "courseName": "Intro to C++",
       "instructorName": "Brackeys",
       "rating": "5/5",
-      "duration": "5 hours"
+      "duration": "5 hours",
+      "status": false
     },
     {
       "courseName":"Intro to Java",
       "instructorName": "Brackeys",
       "rating": "5/5",
-      "duration": "5 hours"
+      "duration": "5 hours",
+      "status": true
     },
     {
       "courseName":"Intro to Python",
       "instructorName": "Brackeys",
       "rating": "5/5",
-      "duration": "5 hours"
+      "duration": "5 hours",
+      "status": false
     }
   ]
 }
