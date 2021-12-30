@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_homePageFragment_to_calendarPage"
             app:destination="@id/calendarPage" />
+        <action
+            android:id="@+id/action_homePageFragment_to_meetFragment"
+            app:destination="@id/meetFragment" />
     </fragment>
     <fragment
         android:id="@+id/supportFragment"
@@ -72,6 +75,15 @@
         tools:layout="@layout/fragment_search" >
         <action
             android:id="@+id/action_searchFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/meetFragment"
+        android:name="com.example.coeus.MeetFragment"
+        android:label="fragment_meet"
+        tools:layout="@layout/fragment_meet" >
+        <action
+            android:id="@+id/action_meetFragment_to_homePageFragment"
             app:destination="@id/homePageFragment" />
     </fragment>
 </navigation>

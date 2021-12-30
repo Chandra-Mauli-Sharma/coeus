@@ -19,7 +19,7 @@ class HomeCardModel {
             HomeCardData(
                 R.drawable.ic_home_page_meet_icon,
                 "1:1 with Educator",
-                R.id.action_homePageFragment_to_course
+                R.id.action_homePageFragment_to_meetFragment
             ),
             HomeCardData(
                 R.drawable.ic_home_page_calender_icon,
