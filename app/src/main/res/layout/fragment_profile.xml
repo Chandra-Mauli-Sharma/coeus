@@ -121,17 +121,20 @@
                 android:layout_marginHorizontal="8dp"
                 android:hint="Name">
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameField"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
                 android:hint="Phone">
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phoneField"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -151,23 +154,27 @@
             tools:layout_editor_absoluteX="0dp">
 
             <com.google.android.material.textfield.TextInputLayout
+
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
                 android:hint="City">
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cityField"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
                 android:hint="State">
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/stateField"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -187,23 +194,27 @@
             tools:layout_editor_absoluteX="0dp">
 
             <com.google.android.material.textfield.TextInputLayout
+
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
                 android:hint="Language">
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/langField"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
                 android:hint="Date of Birth">
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dobField"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -222,6 +233,7 @@
             tools:layout_editor_absoluteX="0dp">
 
             <com.google.android.material.textfield.TextInputLayout
+
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
@@ -229,6 +241,7 @@
                 android:hint="E-Mail">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailField"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
