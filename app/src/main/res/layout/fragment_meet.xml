@@ -71,17 +71,18 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout3"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
-            android:hint="Select Subtopic"
+            android:hint="Select Date"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+            app:startIconDrawable="@android:drawable/ic_menu_month"
             tools:layout_editor_absoluteX="16dp">
 
-            <AutoCompleteTextView
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/dropDownSubtopic"
+                android:focusable="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -110,7 +111,7 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/round_button"
-            android:text="Start Meet with Educator"
+            android:text="Schedule Meet"
             android:textColor="#FFF"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
             tools:layout_editor_absoluteX="16dp" />
