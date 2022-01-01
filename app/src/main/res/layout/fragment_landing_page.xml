@@ -67,6 +67,7 @@ tools:context=".LandingPage">
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="@+id/guideline2"
-    app:srcCompat="@drawable/ic_landing" />
+    app:srcCompat="@drawable/ic_landing_page_illustration" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

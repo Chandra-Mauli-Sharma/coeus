@@ -25,4 +25,9 @@ class UserViewModel(app:Application):AndroidViewModel(app) {
             repo.insert(user)
         }
     }
+    fun delete(){
+        viewModelScope.launch(Dispatchers.IO) {
+            repo.delete()
+        }
+    }
 }

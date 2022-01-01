@@ -14,15 +14,17 @@ data class UserEntity(
     @ColumnInfo(name = "state") val state: String,
     @ColumnInfo(name = "lang") val lang: String,
     @ColumnInfo(name = "dob") val dob: String,
-    @ColumnInfo(name = "email") val email: String
+    @ColumnInfo(name = "email") val email: String,
+    @ColumnInfo(name = "courseName") val courseName: String,
 ) {
     constructor(
         name: String,
-        mobileNo: String,
-        city: String,
-        state: String,
-        lang: String,
-        dob: String,
-        email: String
-    ) : this(0, name, mobileNo, city, state, lang, dob, email)
+        mobileNo: String = "",
+        city: String = "",
+        state: String = "",
+        lang: String = "",
+        dob: String = "",
+        email: String = "",
+        courseName: String = ""
+    ) : this(0, name, mobileNo, city, state, lang, dob, email, courseName)
 }

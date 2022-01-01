@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable/gradient.xml" value="0.32222222222222224" />
         <entry key="app/src/main/res/drawable/ic_cam.xml" value="0.20208333333333334" />
         <entry key="app/src/main/res/drawable/ic_done_checked_arror.xml" value="0.20208333333333334" />
+        <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.13094462540716612" />
         <entry key="app/src/main/res/drawable/round_button.xml" value="0.203125" />
         <entry key="app/src/main/res/drawable/round_done.xml" value="0.2484375" />
         <entry key="app/src/main/res/drawable/round_outline.xml" value="0.203125" />
@@ -17,7 +18,6 @@
         <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.21431521912349813" />
         <entry key="app/src/main/res/layout/fragment_course.xml" value="0.19837671742375626" />
         <entry key="app/src/main/res/layout/fragment_home_page.xml" value="0.2328125" />
-        <entry key="app/src/main/res/layout/fragment_meet.xml" value="0.2792812286340809" />
         <entry key="app/src/main/res/layout/fragment_landing_page.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_meet.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.24838786815571934" />
