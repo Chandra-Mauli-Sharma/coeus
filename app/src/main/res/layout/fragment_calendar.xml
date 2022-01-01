@@ -34,14 +34,57 @@
         android:layout_marginTop="70dp"
         android:background="@drawable/round_outline">
 
-        <CalendarView
-            android:id="@+id/calendarView"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/Platform.MaterialComponents.Light"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="189dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:rotationX="0"
+                android:rotationY="180"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24" />
+        </LinearLayout>
+
+        <com.github.sundeepk.compactcalendarview.CompactCalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="fill_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="32dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:compactCalendarBackgroundColor="#FFF"
+            app:compactCalendarCurrentDayBackgroundColor="#FFF"
+            app:compactCalendarCurrentSelectedDayBackgroundColor="#6789CA"
+            app:compactCalendarMultiEventIndicatorColor="#345FB4"
+            app:compactCalendarTargetHeight="250dp"
+            app:compactCalendarTextColor="#000"
+            app:compactCalendarTextSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
 
         <ImageView
             android:id="@+id/imageView6"
