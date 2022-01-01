@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_host_fragment"
-    app:startDestination="@id/homePageFragment">
+    app:startDestination="@id/landingPage">
     <fragment
         android:id="@+id/course"
         android:name="com.example.coeus.Course"
@@ -84,6 +84,15 @@
         tools:layout="@layout/fragment_meet" >
         <action
             android:id="@+id/action_meetFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/landingPage"
+        android:name="com.example.coeus.LandingPage"
+        android:label="fragment_landing_page"
+        tools:layout="@layout/fragment_landing_page" >
+        <action
+            android:id="@+id/action_landingPage_to_homePageFragment"
             app:destination="@id/homePageFragment" />
     </fragment>
 </navigation>
