@@ -18,7 +18,7 @@ data class UserEntity(
     @ColumnInfo(name = "courseName") val courseName: String,
 ) {
     constructor(
-        name: String,
+        name: String = "",
         mobileNo: String = "",
         city: String = "",
         state: String = "",

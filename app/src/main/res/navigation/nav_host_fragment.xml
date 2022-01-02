@@ -47,6 +47,9 @@
             app:destination="@id/meetFragment"
             app:enterAnim="@android:anim/slide_in_left"
             app:exitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homePageFragment_to_booksFragment"
+            app:destination="@id/booksFragment" />
     </fragment>
         <action
             android:id="@+id/action_homePageFragment_to_booksFragment"
