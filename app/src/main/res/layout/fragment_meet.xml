@@ -24,7 +24,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="656dp"
+        android:layout_height="match_parent"
         android:layout_gravity="bottom"
         android:layout_marginTop="70dp"
         android:background="@drawable/round_outline">
@@ -46,6 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
+                android:background="#FFFFFF"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:layout_editor_absoluteX="0dp" />
 
@@ -66,7 +67,8 @@
                 android:id="@+id/dropDownTopic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp" />
+                android:layout_marginTop="32dp"
+                android:background="#FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -82,9 +84,10 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/dropDownSubtopic"
-                android:focusable="false"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:focusable="false" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -96,12 +99,14 @@
             android:layout_marginTop="16dp"
             android:hint="Description"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
-            app:layout_editor_absoluteX="16dp">
+            app:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteX="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/descMeet"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

@@ -78,6 +78,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/userName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Ansh Tyagi"
@@ -85,6 +86,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/courseName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Information Technology"
@@ -120,10 +122,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
                 android:hint="Name">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/nameField"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -133,10 +137,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
                 android:hint="Phone">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phoneField"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -160,10 +166,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
                 android:hint="City">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/cityField"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -173,10 +181,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
                 android:hint="State">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/stateField"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -200,10 +210,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
                 android:hint="Language">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/langField"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -213,10 +225,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
                 android:hint="Date of Birth">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/dobField"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -243,11 +257,13 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/emailField"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/LogOut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
@@ -257,6 +273,16 @@
             android:textColor="#FFF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_home_page_bottom_illustration"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

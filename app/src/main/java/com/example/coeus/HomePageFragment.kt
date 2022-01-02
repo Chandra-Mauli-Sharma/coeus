@@ -25,7 +25,7 @@ class HomePageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home_page, container, false)
-        mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+        mUserViewModel = ViewModelProvider(this)[UserViewModel::class.java]
         val greetingText = view.findViewById<TextView>(R.id.textView4)
         //TODO Remove Greetings here
         var greetings = setHomeGreeting()
@@ -33,7 +33,7 @@ class HomePageFragment : Fragment() {
             if (user.isNullOrEmpty()){
                 greetingText.text= "Hello!"
             }else{
-                greetingText.text= "Hello! " + user.first().name
+                greetingText.text= "Hello! \n" + user.first().name
             }
          })
         val profliePicBackground = view.findViewById<ImageView>(R.id.imageView)
