@@ -14,7 +14,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.coeus.model.MeetEntity
 import com.example.coeus.viewmodels.MeetViewModel
-import com.google.android.material.textfield.TextInputLayout
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
@@ -27,17 +26,14 @@ class MeetFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_meet, container, false)
-        mMeetViewModel = ViewModelProvider(this).get(MeetViewModel::class.java)
+        mMeetViewModel = ViewModelProvider(this)[MeetViewModel::class.java]
 
         val teacher = listOf<String>("Option 1", "Option2", "Option 3")
         val topics = listOf<String>("Option 1", "Option2", "Option 3")
-//        val subtopic = listOf<String>("Option 1", "Option2", "Option 3")
         val adapter = ArrayAdapter(view.context, R.layout.dropdown_item, teacher)
         val topicAdapter = ArrayAdapter(view.context, R.layout.dropdown_item, topics)
-//        val subtopicAdapter = ArrayAdapter(view.context, R.layout.dropdown_item, subtopic)
         view.findViewById<AutoCompleteTextView>(R.id.dropDownInstructor).setAdapter(adapter)
         view.findViewById<AutoCompleteTextView>(R.id.dropDownTopic).setAdapter(topicAdapter)
-//        view.findViewById<AutoCompleteTextView>(R.id.dropDownSubtopic).setAdapter(subtopicAdapter)
 
         val materialDateBuilder: MaterialDatePicker.Builder<*> =
             MaterialDatePicker.Builder.datePicker()
