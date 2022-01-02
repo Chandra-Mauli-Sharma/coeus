@@ -28,8 +28,8 @@ class HomeCardModel {
             ),
             HomeCardData(
                 R.drawable.ic_home_page_support_icon,
-                "Support",
-                R.id.action_homePageFragment_to_supportFragment
+                "Course Books",
+                R.id.action_homePageFragment_to_booksFragment
             ),
             HomeCardData(
                 R.drawable.ic_home_page_profile_icon,
