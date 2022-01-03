@@ -72,10 +72,6 @@ class CalendarPage : Fragment() {
             }
         })
 
-        //TODO make this TextViewClickable with drawable left
-        view.findViewById<ImageView>(R.id.imageView3).setOnClickListener {
-            view.findNavController().navigate(R.id.action_calendarPage_to_homePageFragment)
-        }
         view.findViewById<TextView>(R.id.textView9).setOnClickListener {
             view.findNavController().navigate(R.id.action_calendarPage_to_homePageFragment)
         }
