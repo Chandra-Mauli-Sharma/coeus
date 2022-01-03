@@ -38,15 +38,5 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_home_page_bottom_illustration"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/recyclerView2"
-            app:layout_constraintStart_toStartOf="@+id/recyclerView2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
