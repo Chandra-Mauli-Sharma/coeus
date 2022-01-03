@@ -27,7 +27,6 @@ class SignUp : Fragment() {
             val name = view.findViewById<TextInputEditText>(R.id.nameField).text.toString()
             val courseName = view.findViewById<TextInputEditText>(R.id.nameField2).text.toString()
             mUserViewModel.insert(UserEntity(name = name,courseName=courseName))
-            Toast.makeText(context,"Sign In", Toast.LENGTH_SHORT).show()
             Navigation.findNavController(view).navigate(R.id.action_signUp_to_homePageFragment)
         }
         return view
