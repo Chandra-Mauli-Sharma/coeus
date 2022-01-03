@@ -1,8 +1,11 @@
 package com.example.coeus.adapter
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -23,7 +26,7 @@ class BookAdapter : RecyclerView.Adapter<BookAdapter.BookViewHolder>() {
         val price = view.findViewById<TextView>(R.id.bookPrice)
         val isbn = view.findViewById<TextView>(R.id.bookId)
         val bookImg = view.findViewById<ImageView>(R.id.bookImg)
-        //TODO add url
+        val viewBook = view.findViewById<Button>(R.id.viewBook)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
@@ -36,8 +39,12 @@ class BookAdapter : RecyclerView.Adapter<BookAdapter.BookViewHolder>() {
         val item = booksList[position]
         holder.bookName.text = item.title
         holder.price.text = item.price
-        holder.isbn.text = item.isbn13
+        holder.isbn.text = "ISBN: ${item.isbn13}"
         Glide.with(holder.itemView.context).load(item.image).into(holder.bookImg)
+
+        holder.viewBook.setOnClickListener{
+            holder.itemView.context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(item.url)))
+        }
     }
 
     override fun getItemCount(): Int {

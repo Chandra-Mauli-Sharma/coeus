@@ -21,8 +21,6 @@ class BooksViewModel(private val repo: BooksRepo) : ViewModel() {
             val response = repo.getAllBooks()
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
-                    println("haha")
-                    println(response.body().toString())
                     books.postValue(response.body()?.books!!)
                     loading.value = false
                 } else {
