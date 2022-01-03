@@ -32,9 +32,6 @@ class SearchFragment : Fragment() {
         val searchView=view.findViewById<SearchView>(R.id.searchView)
         recyclerView=view.findViewById(R.id.recyclerView3)
         courseData = context?.let { CourseModel().load(it) }!!
-        view.findViewById<ImageView>(R.id.Searchback).setOnClickListener{
-            view.findNavController().navigate(R.id.action_searchFragment_to_homePageFragment)
-        }
         view.findViewById<TextView>(R.id.SearchText).setOnClickListener{
             view.findNavController().navigate(R.id.action_searchFragment_to_homePageFragment)
         }

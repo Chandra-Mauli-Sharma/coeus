@@ -43,7 +43,7 @@ class MeetFragment : Fragment() {
             materialDatePicker.show(this.parentFragmentManager, "MATERIAL_DATE_PICKER");
         }
         var datePicked: Date = Date()
-        materialDatePicker.addOnPositiveButtonClickListener { date ->
+        materialDatePicker.addOnPositiveButtonClickListener {
             view.findViewById<TextInputEditText>(R.id.dropDownSubtopic)
                 .setText(materialDatePicker.headerText)
             datePicked = Date(materialDatePicker.headerText)

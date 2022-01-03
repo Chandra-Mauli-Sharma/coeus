@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.example.coeus.model.UserEntity
@@ -28,6 +29,10 @@ class SignUp : Fragment() {
             val courseName = view.findViewById<TextInputEditText>(R.id.nameField2).text.toString()
             mUserViewModel.insert(UserEntity(name = name,courseName=courseName))
             Navigation.findNavController(view).navigate(R.id.action_signUp_to_homePageFragment)
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner){
+            activity?.finish()
         }
         return view
     }

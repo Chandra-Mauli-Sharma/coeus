@@ -13,7 +13,8 @@
             android:id="@+id/action_course_to_homePageFragment"
             app:destination="@id/homePageFragment"
             app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/homePageFragment" />
     </fragment>
     <fragment
         android:id="@+id/homePageFragment"
@@ -64,7 +65,8 @@
             android:id="@+id/action_calendarPage_to_homePageFragment"
             app:destination="@id/homePageFragment"
             app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/homePageFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -75,12 +77,14 @@
             android:id="@+id/action_profileFragment_to_homePageFragment"
             app:destination="@id/homePageFragment"
             app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/homePageFragment" />
         <action
             android:id="@+id/action_profileFragment_to_signUp"
             app:destination="@id/signUp"
             app:enterAnim="@android:anim/slide_out_right"
-            app:exitAnim="@android:anim/slide_in_left" />
+            app:exitAnim="@android:anim/slide_in_left"
+            app:popUpTo="@id/signUp" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -91,7 +95,8 @@
             android:id="@+id/action_searchFragment_to_homePageFragment"
             app:destination="@id/homePageFragment"
             app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/homePageFragment" />
     </fragment>
     <fragment
         android:id="@+id/meetFragment"
@@ -102,7 +107,8 @@
             android:id="@+id/action_meetFragment_to_homePageFragment"
             app:destination="@id/homePageFragment"
             app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/homePageFragment" />
     </fragment>
     <fragment
         android:id="@+id/landingPage"
@@ -113,12 +119,14 @@
             android:id="@+id/action_landingPage_to_signUp"
             app:destination="@id/signUp"
             app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/landingPage" />
         <action
             android:id="@+id/action_landingPage_to_homePageFragment"
             app:destination="@id/homePageFragment"
             app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/landingPage" />
     </fragment>
     <fragment
         android:id="@+id/signUp"
@@ -138,6 +146,7 @@
         tools:layout="@layout/fragment_books" >
         <action
             android:id="@+id/action_booksFragment_to_homePageFragment"
-            app:destination="@id/homePageFragment" />
+            app:destination="@id/homePageFragment"
+            app:popUpTo="@id/homePageFragment" />
     </fragment>
 </navigation>

@@ -1,5 +1,6 @@
 package com.example.coeus
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.activity.addCallback
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +18,7 @@ import com.example.coeus.model.HomeCardModel
 import com.example.coeus.model.UserEntity
 import com.example.coeus.viewmodels.UserViewModel
 import java.util.*
+import kotlin.system.exitProcess
 
 class HomePageFragment : Fragment() {
 
@@ -27,8 +30,7 @@ class HomePageFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home_page, container, false)
         mUserViewModel = ViewModelProvider(this)[UserViewModel::class.java]
         val greetingText = view.findViewById<TextView>(R.id.textView4)
-        //TODO Remove Greetings here
-        var greetings = setHomeGreeting()
+
         mUserViewModel.allUsers.observe(viewLifecycleOwner, { user ->
             if (user.isNullOrEmpty()){
                 greetingText.text= "Hello!"
@@ -50,16 +52,12 @@ class HomePageFragment : Fragment() {
         recyclerView.adapter = HomeCardAdapter(cardImg)
         recyclerView.setHasFixedSize(true)
 
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner){
+            activity?.finish()
+        }
+
         return view
     }
 
-    fun setHomeGreeting(): String {
-        val c = Calendar.getInstance()
-        val timeOfDay = c.get(Calendar.HOUR_OF_DAY)
-        return when (timeOfDay) {
-            in 0..11 -> "Good Morning!"
-            in 12..15 -> "Good Afternoon!"
-            else -> "Good Evening!"
-        }
-    }
+
 }

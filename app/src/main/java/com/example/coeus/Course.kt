@@ -24,11 +24,6 @@ class Course : Fragment() {
 
         val courses= context?.let { CourseModel().load(it) }
 
-        view.findViewById<ImageView>(R.id.imageView3).setOnClickListener{
-            Navigation.findNavController(view).navigate(R.id.action_course_to_homePageFragment)
-        }
-
-
         view.findViewById<TextView>(R.id.textView8).setOnClickListener{
             Navigation.findNavController(view).navigate(R.id.action_course_to_homePageFragment)
         }

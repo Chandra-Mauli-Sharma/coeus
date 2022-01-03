@@ -36,7 +36,7 @@ class BooksFragment : Fragment() {
         val bookRepo = BooksRepo(retrofitService)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewBooks)
         recyclerView.adapter = adapter
-        mViewModel = ViewModelProvider(this,BookViewModelFactory(bookRepo)).get(BooksViewModel::class.java)
+        mViewModel = ViewModelProvider(this,BookViewModelFactory(bookRepo))[BooksViewModel::class.java]
         mViewModel.books.observe(viewLifecycleOwner, {books -> adapter.setBooks(books)})
         mViewModel.getAllBooks()
 
