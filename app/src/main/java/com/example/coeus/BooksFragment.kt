@@ -43,9 +43,6 @@ class BooksFragment : Fragment() {
         view.findViewById<TextView>(R.id.bookBtn).setOnClickListener {
             view.findNavController().navigate(R.id.action_booksFragment_to_homePageFragment)
         }
-        view.findViewById<TextView>(R.id.bookBtn).setOnClickListener {
-            view.findNavController().navigate(R.id.action_booksFragment_to_homePageFragment)
-        }
         return view
     }
 }
