@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.coeus.R
 import com.example.coeus.model.MeetEntity
-import java.time.LocalDateTime
+import java.text.SimpleDateFormat
 import java.util.*
 
 class MeetJoinAdapter(val dataset: List<MeetEntity>) :
