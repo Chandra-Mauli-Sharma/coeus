@@ -23,17 +23,18 @@ class LandingPage : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_landing_page, container, false)
         mUserViewModel = ViewModelProvider(this)[UserViewModel::class.java]
-        mUserViewModel.allUsers.observe(viewLifecycleOwner, { user->
-            if(user.isNullOrEmpty()){
+        mUserViewModel.allUsers.observe(viewLifecycleOwner, { user ->
+            if (user.isNullOrEmpty()) {
                 view.findViewById<TextView>(R.id.textView2).setOnClickListener {
                     Navigation.findNavController(view).navigate(R.id.action_landingPage_to_signUp)
                 }
-            }else{
-                Navigation.findNavController(view).navigate(R.id.action_landingPage_to_homePageFragment)
+            } else {
+                Navigation.findNavController(view)
+                    .navigate(R.id.action_landingPage_to_homePageFragment)
             }
         })
 
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner){
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             activity?.finish()
         }
 

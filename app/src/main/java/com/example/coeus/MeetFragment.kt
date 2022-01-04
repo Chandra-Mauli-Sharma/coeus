@@ -28,8 +28,8 @@ class MeetFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_meet, container, false)
         mMeetViewModel = ViewModelProvider(this)[MeetViewModel::class.java]
 
-        val teacher = listOf<String>("Option 1", "Option2", "Option 3")
-        val topics = listOf<String>("Option 1", "Option2", "Option 3")
+        val teacher = listOf("Option 1", "Option 2", "Option 3")
+        val topics = listOf("Option 1", "Option 2", "Option 3")
         val adapter = ArrayAdapter(view.context, R.layout.dropdown_item, teacher)
         val topicAdapter = ArrayAdapter(view.context, R.layout.dropdown_item, topics)
         view.findViewById<AutoCompleteTextView>(R.id.dropDownInstructor).setAdapter(adapter)
@@ -42,7 +42,7 @@ class MeetFragment : Fragment() {
         view.findViewById<TextInputEditText>(R.id.dropDownSubtopic).setOnClickListener {
             materialDatePicker.show(this.parentFragmentManager, "MATERIAL_DATE_PICKER");
         }
-        var datePicked: Date = Date()
+        var datePicked = Date()
         materialDatePicker.addOnPositiveButtonClickListener {
             view.findViewById<TextInputEditText>(R.id.dropDownSubtopic)
                 .setText(materialDatePicker.headerText)
@@ -60,8 +60,24 @@ class MeetFragment : Fragment() {
                 println("here")
                 Toast.makeText(view.context, "Fill all the fields", Toast.LENGTH_SHORT).show()
             } else {
-                mMeetViewModel.schedule(MeetEntity(0, instructor, topic, datePicked, desc))
-                Toast.makeText(view.context, "Meet Scheduled check Calendar", Toast.LENGTH_SHORT).show()
+                val meetLink = "https://meet.jit.si/" + ("${instructor}${topic}${datePicked}${
+                    desc.substring(
+                        0,
+                        (desc.length / 2) - 1
+                    )
+                }".filter { !it.isWhitespace() }.filter { it.isLetterOrDigit() })
+                mMeetViewModel.schedule(
+                    MeetEntity(
+                        0,
+                        instructor,
+                        topic,
+                        datePicked,
+                        desc,
+                        meetLink
+                    )
+                )
+                Toast.makeText(view.context, "Meet Scheduled check Calendar", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
 
@@ -69,9 +85,5 @@ class MeetFragment : Fragment() {
             view.findNavController().navigate(R.id.action_meetFragment_to_homePageFragment)
         }
         return view
-    }
-
-    private fun scheduleMeet(date: Date) {
-
     }
 }
