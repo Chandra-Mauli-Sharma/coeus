@@ -45,7 +45,7 @@ class MeetJoinAdapter(val dataset: List<MeetEntity>) :
             } else {
                 Toast.makeText(
                     holder.itemView.context,
-                    "The Meet is on ${SimpleDateFormat("MMMM dd, yyyy").format(item.date)}",
+                    "The Meet is on ${SimpleDateFormat("MMMM dd, yyyy",Locale.US).format(item.date)}",
                     Toast.LENGTH_SHORT
                 ).show()
             }
