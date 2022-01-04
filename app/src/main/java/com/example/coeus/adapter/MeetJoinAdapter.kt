@@ -43,11 +43,9 @@ class MeetJoinAdapter(val dataset: List<MeetEntity>) :
                     )
                 )
             } else {
-                val cal = Calendar.getInstance()
-                cal.set(item.date.year,item.date.month,item.date.date)
                 Toast.makeText(
                     holder.itemView.context,
-                    "The Meet is on ${cal.time}",
+                    "The Meet is on ${SimpleDateFormat("MMMM dd, yyyy").format(item.date)}",
                     Toast.LENGTH_SHORT
                 ).show()
             }
