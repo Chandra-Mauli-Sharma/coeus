@@ -5,7 +5,7 @@
       "instructorName": "Brackeys",
       "rating": "5/5",
       "duration": "5 hours",
-      "status": true
+      "status": false
     },
     {
       "courseName": "Intro to C++",
@@ -19,7 +19,7 @@
       "instructorName": "Brackeys",
       "rating": "5/5",
       "duration": "5 hours",
-      "status": true
+      "status": false
     },
     {
       "courseName":"Intro to Python",

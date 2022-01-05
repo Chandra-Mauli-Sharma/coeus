@@ -20,10 +20,14 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.text.SimpleDateFormat
 import java.util.*
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.coeus.adapter.MeetJoinAdapter
 
 
 class CalendarPage : Fragment() {
     private lateinit var mMeetViewModel: MeetViewModel
+    private lateinit var joinDialog : View
     private val dateFormatMonth: SimpleDateFormat =
         SimpleDateFormat("MMMM yyyy", Locale.getDefault())
 
@@ -32,7 +36,7 @@ class CalendarPage : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_calendar, container, false)
-        mMeetViewModel = ViewModelProvider(this).get(MeetViewModel::class.java)
+        mMeetViewModel = ViewModelProvider(this)[MeetViewModel::class.java]
 
         val calendar = view.findViewById<CompactCalendarView>(R.id.calendarView)
         val month = view.findViewById<TextView>(R.id.textView16)
@@ -57,14 +61,19 @@ class CalendarPage : Fragment() {
             override fun onDayClick(dateClicked: Date) {
                 //Add dialog with events
                 val events = mMeetViewModel.allMeets.value?.filter { it.date == dateClicked }
-                val nameMeet = events!!.map { it.topic }.toList()
-                val adapter = ArrayAdapter(view.context, R.layout.dropdown_item, nameMeet)
-                if (!events.isNullOrEmpty())
-                    MaterialAlertDialogBuilder(view.context).setTitle("Meets")
-                        .setPositiveButton("Okay") { dialog, which -> {} }.setAdapter(
-                        adapter,
-                        DialogInterface.OnClickListener { dialog, item -> println("ok") }).create()
+
+                if (!events.isNullOrEmpty()) {
+                    joinDialog = LayoutInflater.from(context)
+                        .inflate(R.layout.fragment_meet_join, null, false)
+                    joinDialog.findViewById<RecyclerView>(R.id.joinList).apply {
+                        adapter = MeetJoinAdapter(events)
+                        layoutManager=LinearLayoutManager(context)
+                    }
+
+                    MaterialAlertDialogBuilder(view.context).setTitle("Meets").setView(joinDialog)
+                        .setPositiveButton("Okay") { dialog, which -> {} }.create()
                         .show()
+                }
             }
 
             override fun onMonthScroll(firstDayOfNewMonth: Date) {

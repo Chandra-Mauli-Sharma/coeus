@@ -1,5 +1,7 @@
 package com.example.coeus.adapter
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,10 +28,17 @@ class SearchCourseAdapter(var dataset: List<CourseData>) :
         val item = dataset[position]
 
         holder.courseName.text = item.courseName
-        if (item.status) {
+        holder.courseStatus.setOnClickListener{
             holder.courseStatus.setImageResource(R.drawable.ic_green_confirm_tick)
         }
-
+        holder.itemView.setOnClickListener {
+            holder.itemView.context.startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://www.udemy.com/courses/search/?q=${item.courseName}&sort=highest-rated")
+                )
+            )
+        }
     }
 
     override fun getItemCount(): Int = dataset.size

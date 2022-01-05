@@ -5,5 +5,5 @@ data class CourseData(
     val instructorName: String,
     val rating: String,
     val duration: String,
-    val status: Boolean
+    var status: Boolean
 )

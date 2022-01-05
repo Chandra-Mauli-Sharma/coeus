@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -25,7 +26,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class BooksFragment : Fragment() {
     private val adapter = BookAdapter()
-    lateinit var mViewModel:BooksViewModel
+    lateinit var mViewModel: BooksViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,8 +37,14 @@ class BooksFragment : Fragment() {
         val bookRepo = BooksRepo(retrofitService)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewBooks)
         recyclerView.adapter = adapter
-        mViewModel = ViewModelProvider(this,BookViewModelFactory(bookRepo))[BooksViewModel::class.java]
-        mViewModel.books.observe(viewLifecycleOwner, {books -> adapter.setBooks(books)})
+        mViewModel =
+            ViewModelProvider(this, BookViewModelFactory(bookRepo))[BooksViewModel::class.java]
+        mViewModel.books.observe(viewLifecycleOwner, { books ->
+            if (books.isNotEmpty()) {
+                adapter.setBooks(books)
+                view.findViewById<ProgressBar>(R.id.progressBar).visibility = View.GONE
+            }
+        })
         mViewModel.getAllBooks()
 
         view.findViewById<TextView>(R.id.bookBtn).setOnClickListener {

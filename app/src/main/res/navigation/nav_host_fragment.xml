@@ -147,6 +147,8 @@
         <action
             android:id="@+id/action_booksFragment_to_homePageFragment"
             app:destination="@id/homePageFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
             app:popUpTo="@id/homePageFragment" />
     </fragment>
 </navigation>
