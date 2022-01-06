@@ -1,31 +1,31 @@
 {
   "Courses": [
     {
-      "courseName":"Intro to C#",
-      "instructorName": "Brackeys",
+      "courseName":"Intro to Java",
+      "instructorName": "Udemy",
       "rating": "5/5",
-      "duration": "5 hours",
+      "duration": "Depends",
+      "status": false
+    },
+    {
+      "courseName":"Intro to C#",
+      "instructorName": "Udemy",
+      "rating": "5/5",
+      "duration": "Depends",
       "status": false
     },
     {
       "courseName": "Intro to C++",
-      "instructorName": "Brackeys",
+      "instructorName": "Udemy",
       "rating": "5/5",
-      "duration": "5 hours",
-      "status": false
-    },
-    {
-      "courseName":"Intro to Java",
-      "instructorName": "Brackeys",
-      "rating": "5/5",
-      "duration": "5 hours",
+      "duration": "Depends",
       "status": false
     },
     {
       "courseName":"Intro to Python",
-      "instructorName": "Brackeys",
+      "instructorName": "Udemy",
       "rating": "5/5",
-      "duration": "5 hours",
+      "duration": "Depends",
       "status": false
     }
   ]
