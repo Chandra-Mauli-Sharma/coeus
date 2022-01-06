@@ -25,4 +25,10 @@ class MeetViewModel(app: Application): AndroidViewModel(app) {
             repo.schedule(meet)
         }
     }
+
+    fun delete(){
+        viewModelScope.launch(Dispatchers.IO) {
+            repo.delete()
+        }
+    }
 }

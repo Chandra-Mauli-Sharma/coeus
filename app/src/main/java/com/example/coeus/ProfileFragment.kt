@@ -15,14 +15,17 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.google.android.material.button.MaterialButton
 import com.example.coeus.model.UserEntity
+import com.example.coeus.viewmodels.MeetViewModel
 import com.example.coeus.viewmodels.UserViewModel
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import java.text.SimpleDateFormat
 import java.util.*
 
 class ProfileFragment : Fragment() {
     private lateinit var mUserViewModel: UserViewModel
+    private lateinit var mMeetViewModel: MeetViewModel
     private lateinit var userName: String
     private lateinit var courseName: String
     override fun onCreateView(
@@ -32,6 +35,7 @@ class ProfileFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
 
         mUserViewModel = ViewModelProvider(this)[UserViewModel::class.java]
+        mMeetViewModel = ViewModelProvider(this)[MeetViewModel::class.java]
 
         val nameField = view.findViewById<TextInputEditText>(R.id.nameField)
         val phoneField = view.findViewById<TextInputEditText>(R.id.phoneField)
@@ -46,23 +50,7 @@ class ProfileFragment : Fragment() {
 
         emailField.doOnTextChanged { _, _, _, _ -> validateEmailAddress(emailField, emailInput) }
 
-
         var datePicked: Date = Date()
-        if (dobField.text.toString().isEmpty()) {
-            view.findViewById<TextInputEditText>(R.id.dobField).setOnClickListener {
-                val materialDateBuilder: MaterialDatePicker.Builder<*> =
-                    MaterialDatePicker.Builder.datePicker()
-                materialDateBuilder.setTitleText("SELECT A DATE");
-                val materialDatePicker = materialDateBuilder.build();
-                materialDatePicker.show(this.parentFragmentManager, "MATERIAL_DATE_PICKER");
-                materialDatePicker.addOnPositiveButtonClickListener {
-                    view.findViewById<TextInputEditText>(R.id.dobField)
-                        .setText(materialDatePicker.headerText)
-                    datePicked = Date(materialDatePicker.headerText)
-                }
-            }
-        }
-
 
         mUserViewModel.allUsers.observe(viewLifecycleOwner, { user ->
             userName = user.first().name
@@ -70,6 +58,23 @@ class ProfileFragment : Fragment() {
             view.findViewById<TextView>(R.id.userName).text = userName
             view.findViewById<TextView>(R.id.courseName).text = courseName
             if (user.first().city.isEmpty() && user.first().email.isEmpty() && user.first().dob.isEmpty() && user.first().lang.isEmpty() && user.first().mobileNo.isEmpty() && user.first().state.isEmpty()) {
+                if (dobField.text.toString().isEmpty()) {
+                    view.findViewById<TextInputEditText>(R.id.dobField).setOnClickListener {
+                        val materialDateBuilder: MaterialDatePicker.Builder<*> =
+                            MaterialDatePicker.Builder.datePicker()
+                        materialDateBuilder.setTitleText("SELECT A DATE");
+                        val materialDatePicker = materialDateBuilder.build();
+                        materialDatePicker.show(
+                            this.parentFragmentManager,
+                            "MATERIAL_DATE_PICKER"
+                        );
+                        materialDatePicker.addOnPositiveButtonClickListener {
+                            view.findViewById<TextInputEditText>(R.id.dobField)
+                                .setText(materialDatePicker.headerText)
+                            datePicked = Date(materialDatePicker.headerText)
+                        }
+                    }
+                }
                 view.findViewById<MaterialButton>(R.id.doneBtn).setOnClickListener {
                     val name = nameField.text.toString()
                     val phone = phoneField.text.toString()
@@ -77,21 +82,25 @@ class ProfileFragment : Fragment() {
                     val state = stateField.text.toString()
                     val lang = langField.text.toString()
                     val email = emailField.text.toString()
-
-                    mUserViewModel.insert(
-                        UserEntity(
-                            name,
-                            phone,
-                            city,
-                            state,
-                            lang,
-                            datePicked.toString(),
-                            email,
-                            courseName
+                    if (name.isEmpty() && phone.isEmpty() && city.isEmpty() && state.isEmpty() && lang.isEmpty() && email.isEmpty()) {
+                        Toast.makeText(context, "Text Field are empty", Toast.LENGTH_SHORT).show()
+                    } else {
+                        mUserViewModel.insert(
+                            UserEntity(
+                                name,
+                                phone,
+                                city,
+                                state,
+                                lang,
+                                SimpleDateFormat("MMMM dd, yyyy", Locale.US).format(datePicked)
+                                    .toString(),
+                                email,
+                                courseName
+                            )
                         )
-                    )
-                    Toast.makeText(this.requireContext(), "User updated", Toast.LENGTH_SHORT)
-                        .show()
+                        Toast.makeText(context, "User updated", Toast.LENGTH_SHORT)
+                            .show()
+                    }
                 }
             } else {
                 nameField.setText(user.first().name)
@@ -114,6 +123,7 @@ class ProfileFragment : Fragment() {
 
         view.findViewById<Button>(R.id.LogOut).setOnClickListener {
             mUserViewModel.delete()
+            mMeetViewModel.delete()
             Navigation.findNavController(view).navigate(R.id.action_profileFragment_to_signUp)
         }
 
