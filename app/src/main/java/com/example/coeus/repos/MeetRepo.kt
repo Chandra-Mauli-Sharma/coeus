@@ -6,5 +6,6 @@ import com.example.coeus.model.MeetEntity
 
 class MeetRepo(private val meetDao: MeetDao) {
     val getMeets: LiveData<List<MeetEntity>> = meetDao.getMeets()
-    suspend fun schedule(meet:MeetEntity) = meetDao.schedule(meet)
+    suspend fun schedule(meet: MeetEntity) = meetDao.schedule(meet)
+    suspend fun delete() = meetDao.delete()
 }

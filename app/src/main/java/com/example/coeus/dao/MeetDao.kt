@@ -13,4 +13,7 @@ interface MeetDao {
 
     @Query("select * from meets")
     fun getMeets(): LiveData<List<MeetEntity>>
+
+    @Query("DELETE FROM meets")
+    suspend fun delete()
 }
