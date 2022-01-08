@@ -17,8 +17,9 @@ class BooksViewModel(private val repo: BooksRepo) : ViewModel() {
     val loading = MutableLiveData<Boolean>()
 
     fun getAllBooks() {
+        val page = (1..20).random()
         job = CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
-            val response = repo.getAllBooks()
+            val response = repo.getAllBooks(page)
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
                     books.postValue(response.body()?.books!!)

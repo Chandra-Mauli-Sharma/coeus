@@ -5,14 +5,14 @@ plugins {
 }
 
 android {
-    signingConfigs {
-        release {
-        storeFile file('/home/dell/coeuskeystore.jks')
-            storePassword 'Abcd@9025'
-            keyAlias 'coeus'
-            keyPassword 'Abcd@9025'
-        }
-    }
+//    signingConfigs {
+//        release {
+////        storeFile file('/home/dell/coeuskeystore.jks')
+////            storePassword 'Abcd@9025'
+////            keyAlias 'coeus'
+////            keyPassword 'Abcd@9025'
+//        }
+//    }
     compileSdk 31
 
     defaultConfig {
@@ -23,7 +23,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        signingConfig signingConfigs.release
+//        signingConfig signingConfigs.debug
     }
 
     buildTypes {
@@ -32,7 +32,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            signingConfig signingConfigs.release
+//            signingConfig signingConfigs.release
         }
     }
     compileOptions {
@@ -46,7 +46,7 @@ android {
     productFlavors {
         coeus {
             dimension 'coeus'
-            signingConfig signingConfigs.release
+//            signingConfig signingConfigs.release
         }
     }
 }

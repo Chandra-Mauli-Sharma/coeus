@@ -5,13 +5,15 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 const val BASE_URL = "https://api.itbook.store/1.0/"
 
-interface BookApiInterface {
+val page = (1..65).random()
 
-    @GET("search/Information&Technology")
-    suspend fun getBooks(): Response<BookResponse>
+interface BookApiInterface {
+    @GET("search/Information&Technology/{page}")
+    suspend fun getBooks(@Path("page") page:Int): Response<BookResponse>
 
     companion object{
         var retrofit: BookApiInterface? = null
